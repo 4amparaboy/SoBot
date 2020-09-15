@@ -288,11 +288,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Мій мозок переповнений ідеями 🎉",
                                            callback_data="ideas_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("І так всього вистачає 🙅🏻",
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
@@ -308,11 +308,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Мій мозок переповнений ідеями 🎉",
                                            callback_data="ideas_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("І так всього вистачає 🙅🏻",
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
@@ -328,11 +328,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Мій мозок переповнений ідеями 🎉",
                                            callback_data="ideas_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("І так всього вистачає 🙅🏻",
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
@@ -348,11 +348,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Мій мозок переповнений ідеями 🎉",
                                            callback_data="ideas_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("І так всього вистачає 🙅🏻",
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
@@ -369,11 +369,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Мій мозок переповнений ідеями 🎉",
                                            callback_data="ideas_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("І так всього вистачає 🙅🏻",
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
@@ -389,11 +389,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Мій мозок переповнений ідеями 🎉",
                                            callback_data="ideas_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("І так всього вистачає 🙅🏻",
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
@@ -411,11 +411,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Мій мозок переповнений ідеями 🎉",
                                            callback_data="ideas_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("І так всього вистачає 🙅🏻",
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
@@ -429,29 +429,29 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Звичайно 😎",
                                            callback_data="pres_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Це не для мене 🙆🏻‍♀",
                                            callback_data="pres_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, 'СК')
     bot.send_message(call.message.chat.id,
-                     "Мріяв стати президентом школи?",
+                     "Мріяв/ла стати президентом школи? 😏",
                      reply_markup=keyboard)
 
 @bot.callback_query_handler(func=lambda call: call.data == "pres_yes")
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Ще й як 💃🏻",
                                            callback_data="dance_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ой, ні 🙈",
                                            callback_data="dance_no")
     )
     bot.answer_callback_query(call.id)
@@ -459,24 +459,24 @@ def statistic(call):
     controller.add_so(call.message.from_user.id, 'КС')
     controller.add_so(call.message.from_user.id, 'СВК')
     bot.send_message(call.message.chat.id,
-                     "Ти танцюєш краще всіх на тусах?",
+                     "Ти запалюєш танцполи на тусах? 🕺🏼",
                      reply_markup=keyboard)
 
 @bot.callback_query_handler(func=lambda call: call.data == "pres_no")
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Ще й як 💃🏻",
                                            callback_data="dance_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ой, ні 🙈",
                                            callback_data="dance_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Ти танцюєш краще всіх на тусах?",
+                     "Ти запалюєш танцполи на тусах? 🕺🏼",
                      reply_markup=keyboard)
 
 
@@ -484,17 +484,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Ще й як 💃🏻",
                                            callback_data="dance_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ой, ні 🙈",
                                            callback_data="dance_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Ти танцюєш краще всіх на тусах?",
+                     "Ти запалюєш танцполи на тусах? 🕺🏼",
                      reply_markup=keyboard)
 
 
@@ -502,18 +502,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("А як інакше 🤩",
                                            callback_data="report_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ні-ні-ні 😶",
                                            callback_data="report_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, 'Могилянка денс')
     bot.send_message(call.message.chat.id,
-                     "Ти цікавишся журналістикою?",
+                     "Ти цікавишся журналістикою? 🎤",
                      reply_markup=keyboard)
 
 
@@ -521,17 +521,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Дужее 😊",
                                            callback_data="dance_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Я деревце 😅",
                                            callback_data="dancelearn_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "А хотів би навчитися?",
+                     "А хотів/ла б навчитися? 🥰",
                      reply_markup=keyboard)
 
 
@@ -539,17 +539,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("А як інакше 🤩",
                                            callback_data="report_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ні-ні-ні 😶",
                                            callback_data="report_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                      "Ти цікавишся журналістикою?",
+                      "Ти цікавишся журналістикою? 🎤 ",
                      reply_markup=keyboard)
 
 
@@ -557,11 +557,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("О таак 🤫",
                                            callback_data="radio_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Це ще актуально? 🤭",
                                            callback_data="report_no")
     )
     bot.answer_callback_query(call.id)
@@ -569,7 +569,7 @@ def statistic(call):
     controller.add_so(call.message.from_user.id, "ТА")
     controller.add_so(call.message.from_user.id, "СВ family")
     bot.send_message(call.message.chat.id,
-                      "А радіожурналістикою?",
+                      "А радіожурналістикою? 📻",
                      reply_markup=keyboard)
 
 
@@ -577,18 +577,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Не уявляю життя без цього ❕",
                                            callback_data="meet_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Не беру участі 💆🏻",
                                            callback_data="meet_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "РадіоКвіт")
     bot.send_message(call.message.chat.id,
-                     "Тебе можна зустріти на кожному мітингу?",
+                     "Тебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
 
 
@@ -596,17 +596,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Не уявляю життя без цього ❕",
                                            callback_data="meet_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Не беру участі 💆🏻",
                                            callback_data="meet_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                      "Тебе можна зустріти на кожному мітингу?",
+                      "Тебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
 
 
@@ -614,11 +614,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Бентежать моє серце 💚",
                                            callback_data="eco_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Та ні 👌🏻",
                                            callback_data="meet_no")
     )
     bot.answer_callback_query(call.id)
@@ -626,7 +626,7 @@ def statistic(call):
     controller.add_so(call.message.from_user.id, "Кма Амнесті")
     controller.add_so(call.message.from_user.id, "Енактус")
     bot.send_message(call.message.chat.id,
-                      "Тебе турбують питання екології?",
+                      "Тебе турбують питання екології? 🌱",
                      reply_markup=keyboard)
 
 
@@ -634,18 +634,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Так, це весело 🎲",
                                            callback_data="geek_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ні, краще посплю 😴",
                                            callback_data="geek_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "ЕкоКлуб")
     bot.send_message(call.message.chat.id,
-                      "Любиш настільні ігри так само, як відсутність пар в суботу?",
+                      "Любиш настільні ігри так само, як відсутність пар в суботу? 😍",
                      reply_markup=keyboard)
 
 
@@ -653,17 +653,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Так, це весело 🎲",
                                            callback_data="geek_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ні, краще посплю 😴",
                                            callback_data="geek_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Любиш настільні ігри так само, як відсутність пар в суботу?",
+                     "Любиш настільні ігри так само, як відсутність пар в суботу? 😍",
                      reply_markup=keyboard)
 
 
@@ -671,18 +671,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Я найкращий/а у цьому 🧛‍♀",
                                            callback_data="mafia_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Це нудно 🙅🏻",
                                            callback_data="geek_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "ГікКлаб")
     bot.send_message(call.message.chat.id,
-                     "А в Мафію граєш з друзями?",
+                     "А в Мафію граєш з друзями? 🧛🏻",
                      reply_markup=keyboard)
 
 
@@ -690,18 +690,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Малюю все і скрізь 👩🏻‍🎨",
                                            callback_data="art_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ага 😂",
                                            callback_data="art_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КмаМафія")
     bot.send_message(call.message.chat.id,
-                     "Твоя мама каже, що ти гарно малюєш?",
+                     "Друзі у захваті від твоїх малюнків? 😍",
                      reply_markup=keyboard)
 
 
@@ -709,17 +709,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Малюю все і скрізь 👩🏻‍🎨",
                                            callback_data="art_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Ага 😂",
                                            callback_data="art_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Твоя мама каже, що ти гарно малюєш?",
+                     "Друзі у захваті від твоїх малюнків? 😍",
                      reply_markup=keyboard)
 
 
@@ -727,18 +727,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Невід’ємна частина мене 😌",
                                            callback_data="design_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Байдуже, як виглядає 🙄",
                                            callback_data="art_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КМА МАГ")
     bot.send_message(call.message.chat.id,
-                     "Любиш дизайн та креатив?",
+                     "Любиш дизайн і креатив? 🌈 ",
                      reply_markup=keyboard)
 
 
@@ -746,11 +746,11 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Хобі мого життя 🤞🏼",
                                            callback_data="film_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Не моє 🙃",
                                            callback_data="film_no")
     )
     bot.answer_callback_query(call.id)
@@ -758,7 +758,7 @@ def statistic(call):
     controller.add_so(call.message.from_user.id, "Сквад")
     controller.add_so(call.message.from_user.id, "Могила Арт Вик")
     bot.send_message(call.message.chat.id,
-                     "Любиш знімати ролики, займатися монтажем або фотографією?",
+                     "Знімаєш ролики, займаєшся монтажем або фотографією? 📷 ",
                      reply_markup=keyboard)
 
 
@@ -766,17 +766,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Хобі мого життя 🤞🏼",
                                            callback_data="film_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Не моє 🙃",
                                            callback_data="film_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Любиш знімати ролики, займатися монтажем або фотографією?",
+                     "Знімаєш ролики, займаєшся монтажем або фотографією? 📷 ",
                      reply_markup=keyboard)
 
 
@@ -784,18 +784,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Обожнюю 🍿",
                                            callback_data="kino_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Рідко 📲",
                                            callback_data="kino_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "ТА")
     bot.send_message(call.message.chat.id,
-                     "А фільми дивитись любиш?",
+                     "А фільми любиш дивитися? 🎬",
                      reply_markup=keyboard)
 
 
@@ -803,17 +803,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Обожнюю 🍿",
                                            callback_data="kino_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Рідко 📲",
                                            callback_data="kino_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "А фільми дивитись любиш?",
+                     "А фільми дивитись любиш? 🎬",
                      reply_markup=keyboard)
 
 
@@ -822,18 +822,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Роблю це постійно 🎶",
                                            callback_data="song_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Хіба що в душі 🚿",
                                            callback_data="song_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Кіноклуб")
     bot.send_message(call.message.chat.id,
-                     "Ти співаєш краще всіх?",
+                     "Ти співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
 
 
@@ -841,17 +841,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Роблю це постійно 🎶",
                                            callback_data="song_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Хіба що в душі 🚿",
                                            callback_data="song_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Ти співаєш краще всіх?",
+                     "Ти співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
 
 
@@ -859,18 +859,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Оо це про мене 🎹",
                                            callback_data="piano_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Не вмію 😝",
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Хор")
     bot.send_message(call.message.chat.id,
-                     "А може ще граєш на музичному інструменті?",
+                     "А може ще й на музичному інструменті граєш? 🎼",
                      reply_markup=keyboard)
 
 
@@ -878,17 +878,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Оо це про мене 🥁",
                                            callback_data="piano_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Не вмію 😝",
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "А може краще всіх граєш на музичному інструменті?",
+                     "А може граєш на музичному  інструменті? 🎸",
                      reply_markup=keyboard)
 
 
@@ -896,18 +896,18 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Потайки мрію про це 🙊",
                                            callback_data="teatr_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Хіба що роль кущика 😅",
                                            callback_data="teatr_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КУТ")
     bot.send_message(call.message.chat.id,
-                     "Ти хотів би спробувати себе в ролі актора?",
+                     "Ти хотів/ла б розвинути своє акторство на сцені? 🎭",
                      reply_markup=keyboard)
 
 
@@ -915,17 +915,17 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Так",
+        telebot.types.InlineKeyboardButton("Потайки мрію про це 🙊",
                                            callback_data="teatr_yes")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Ні",
+        telebot.types.InlineKeyboardButton("Хіба що роль кущика 😅",
                                            callback_data="teatr_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Ти хотів би спробувати себе в ролі актора?",
+                     "Ти хотів/ла б розвинути своє акторство на сцені? 🎭",
                      reply_markup=keyboard)
 
 
