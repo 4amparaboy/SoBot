@@ -29,6 +29,5 @@ class Controller(object):
         return self.cursor.fetchall()
 
     def get_soinfo_fromuser(self, user):
-        print(user)
         self.cursor.execute('SELECT information FROM so_info WHERE so in (SELECT DISTINCT so FROM user_so WHERE id = %s)', ([user]))
         return self.cursor.fetchall()

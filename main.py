@@ -298,7 +298,6 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id,'Fido')
-    bot.send_message(call.message.chat.id, 'Чудово!')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
@@ -318,7 +317,6 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id,'East West Business')
-    bot.send_message(call.message.chat.id, 'Чудово!')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
@@ -338,7 +336,6 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id,'Студентське біологічне товариство')
-    bot.send_message(call.message.chat.id, 'Чудово!')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
@@ -359,7 +356,6 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id,'Moot Court Society')
     controller.add_so(call.message.from_user.id, 'Kma Legal Hackers')
-    bot.send_message(call.message.chat.id, 'Чудово!')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
@@ -379,7 +375,6 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id,'Це є ФГН')
-    bot.send_message(call.message.chat.id, 'Чудово!')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
@@ -401,7 +396,6 @@ def statistic(call):
     controller.add_so(call.message.from_user.id,'Асоціація студентів політологів')
     controller.add_so(call.message.from_user.id, 'ФСНСТ family')
     controller.add_so(call.message.from_user.id, 'IR НаУКМА')
-    bot.send_message(call.message.chat.id, 'Чудово!')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
