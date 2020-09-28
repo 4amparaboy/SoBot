@@ -25,7 +25,7 @@ def get_maybe_so(user):
         if "*"  in items[0]:
             string = string + str(items[0].replace("*","")) + ", "
 
-    string = string[:-1] + ". "
+    string = string[:-2] + ". "
     return string
 
 
