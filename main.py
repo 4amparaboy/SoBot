@@ -14,10 +14,8 @@ def get_actual_so(user):
     string = ""
     for items in list:
         if "*" not in items[0]:
-            if items != list[len(list) - 1]:
-                string = string + str(items[0].replace("*","")) + ", "
-            else:
-                string = string + str(items[0].replace("*","")) + ". "
+            string = string + str(items[0].replace("*","")) + ", "
+    string = string[:-1] + ". "
     return string
 
 def get_maybe_so(user):
@@ -25,10 +23,9 @@ def get_maybe_so(user):
     string = ""
     for items in list:
         if "*"  in items[0]:
-            if items != list[len(list) - 1]:
-                string = string + str(items[0].replace("*","")) + ", "
-            else:
-                string = string + str(items[0].replace("*","")) + ". "
+            string = string + str(items[0].replace("*","")) + ", "
+
+    string = string[:-1] + ". "
     return string
 
 
