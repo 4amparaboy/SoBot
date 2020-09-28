@@ -193,7 +193,7 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Звісно, лекції нудні 🙋🏼",
+        telebot.types.InlineKeyboardButton("Звісно, мені потрібно більше практики 🙋🏼",
                                            callback_data="practFi_yes")
     )
     keyboard.row(
@@ -201,7 +201,7 @@ def statistic(call):
                                            callback_data="practFi_yes_maybe")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Теорія one love 🤓",
+        telebot.types.InlineKeyboardButton("Ні, мені і пар вистачає 🤓",
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
@@ -215,7 +215,7 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Звісно, лекції нудні 🙋🏼",
+        telebot.types.InlineKeyboardButton("Звісно, мені потрібно більше практики 🙋🏼",
                                            callback_data="practFen_yes")
     )
     keyboard.row(
@@ -223,7 +223,7 @@ def statistic(call):
                                            callback_data="practFen_yes_maybe")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Теорія one love 🤓",
+        telebot.types.InlineKeyboardButton("Ні, мені і пар вистачає 🤓",
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
@@ -237,7 +237,7 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Звісно, лекції нудні 🙋🏼",
+        telebot.types.InlineKeyboardButton("Звісно, мені потрібно більше практики 🙋🏼",
                                            callback_data="practFpvn_yes")
     )
     keyboard.row(
@@ -245,7 +245,7 @@ def statistic(call):
                                            callback_data="practFpvn_yes_maybe")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Теорія one love 🤓",
+        telebot.types.InlineKeyboardButton("Ні, мені і пар вистачає 🤓",
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
@@ -259,7 +259,7 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Звісно, лекції нудні 🙋🏼",
+        telebot.types.InlineKeyboardButton("Звісно, мені потрібно більше практики 🙋🏼",
                                            callback_data="practFprn_yes")
     )
     keyboard.row(
@@ -267,7 +267,7 @@ def statistic(call):
                                            callback_data="practFprn_yes_maybe")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Теорія one love 🤓",
+        telebot.types.InlineKeyboardButton("Ні, мені і пар вистачає 🤓",
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
@@ -281,7 +281,7 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Звісно, лекції нудні 🙋🏼",
+        telebot.types.InlineKeyboardButton("Звісно, мені потрібно більше практики 🙋🏼",
                                            callback_data="practFgn_yes")
     )
     keyboard.row(
@@ -289,7 +289,7 @@ def statistic(call):
                                            callback_data="practFgn_yes_maybe")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Теорія one love 🤓",
+        telebot.types.InlineKeyboardButton("Ні, мені і пар вистачає 🤓",
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
@@ -303,7 +303,7 @@ def statistic(call):
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Звісно, лекції нудні 🙋🏼",
+        telebot.types.InlineKeyboardButton("Звісно, мені потрібно більше практики 🙋🏼",
                                            callback_data="practFsnst_yes")
     )
     keyboard.row(
@@ -311,7 +311,7 @@ def statistic(call):
                                            callback_data="practFsnst_yes_maybe")
     )
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Теорія one love 🤓",
+        telebot.types.InlineKeyboardButton("Ні, мені і пар вистачає 🤓",
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
