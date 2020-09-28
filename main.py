@@ -1653,7 +1653,7 @@ def statistic(call):
     for i in controller.get_soinfo_fromuser(call.message.from_user.id):
          bot.send_message(call.message.chat.id, i)
 
-    bot.send_message(call.message.chat.id,"You're rock!🤩\n Щоб дізнатися про інші організації переходь у відповідний розділ головного меню!", reply_markup=keyboard)
+    bot.send_message(call.message.chat.id,"You're rock!🤩\nЩоб дізнатися про інші організації переходь у відповідний розділ головного меню!", reply_markup=keyboard)
     get_actual_so(call.message.from_user.id)
 
 
