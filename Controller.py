@@ -31,3 +31,7 @@ class Controller(object):
     def get_soinfo_fromuser(self, user):
         self.cursor.execute('SELECT information FROM so_info WHERE so in (SELECT DISTINCT so FROM user_so WHERE id = %s)', ([user]))
         return self.cursor.fetchall()
+
+    def normalization(self):
+        self.cursor.execute('UPDATE user_so SET so = REPLACE(so,\'*\',\'\')', )
+        self.conn.commit()

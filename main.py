@@ -868,7 +868,9 @@ def statistic(call):
     controller.add_so(call.message.from_user.id, "Та Могилянка")
     controller.add_so(call.message.from_user.id, "Радіо КВІТ")
     bot.send_message(call.message.chat.id,
-                     "Ти вже на пів шляху! \nТебе можна зустріти на мітингах? ❌",
+                     "Ти вже на пів шляху!")
+    bot.send_message(call.message.chat.id,
+                     "Тебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
 
 
@@ -892,7 +894,9 @@ def statistic(call):
     controller.add_so(call.message.from_user.id, "Та Могилянка*")
     controller.add_so(call.message.from_user.id, "Радіо КВІТ*")
     bot.send_message(call.message.chat.id,
-                     "Ти вже на пів шляху! \nТебе можна зустріти на мітингах? ❌",
+                     "Ти вже на пів шляху!")
+    bot.send_message(call.message.chat.id,
+                     "Тебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
 
 
@@ -915,7 +919,9 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                      "Ти вже на пів шляху! \nТебе можна зустріти на мітингах? ❌",
+                      "Ти вже на пів шляху!")
+    bot.send_message(call.message.chat.id,
+                     "Тебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
 
 
@@ -932,9 +938,10 @@ def statistic(call):
     )
     keyboard.row(
         telebot.types.InlineKeyboardButton("Та ні 👌🏻",
-                                           callback_data="meet_no")
+                                           callback_data="eco_no")
     )
     bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id-1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "KMAMNESTY")
     bot.send_message(call.message.chat.id,
@@ -955,9 +962,10 @@ def statistic(call):
     )
     keyboard.row(
         telebot.types.InlineKeyboardButton("Та ні 👌🏻",
-                                           callback_data="meet_no")
+                                           callback_data="eco_no")
     )
     bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "KMAMNESTY*")
     bot.send_message(call.message.chat.id,
@@ -1011,7 +1019,7 @@ def statistic(call):
                      reply_markup=keyboard)
 
 
-@bot.callback_query_handler(func=lambda call: call.data == "meet_no")
+@bot.callback_query_handler(func=lambda call: call.data == "eco_yes")
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
@@ -1029,7 +1037,30 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Любиш настільні ігри так само, як відсутність пар в суботу? 😍",
+                      "Любиш настільні ігри так само, як відсутність пар в суботу? 😍",
+                     reply_markup=keyboard)
+
+
+@bot.callback_query_handler(func=lambda call: call.data == "meet_no")
+def statistic(call):
+    keyboard = telebot.types.InlineKeyboardMarkup()
+    keyboard.row(
+        telebot.types.InlineKeyboardButton("Бентежать моє серце 💚",
+                                           callback_data="eco_yes")
+    )
+    keyboard.row(
+        telebot.types.InlineKeyboardButton("Хіба що стараюся не брати пакетики в магазинах 😺 ",
+                                           callback_data="eco_yes_maybe")
+    )
+    keyboard.row(
+        telebot.types.InlineKeyboardButton("Та ні 👌🏻",
+                                           callback_data="eco_no")
+    )
+    bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
+    bot.delete_message(call.message.chat.id, call.message.message_id)
+    bot.send_message(call.message.chat.id,
+                     "Тебе турбують питання екології? 🌱",
                      reply_markup=keyboard)
 
 
@@ -1098,7 +1129,10 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КмаМафія")
     bot.send_message(call.message.chat.id,
-                     "Залишилось ще трошки! \nВважаєш себе творчою людиною? 🦄",
+                     "Залишилось ще трошки!",
+                     reply_markup=keyboard)
+    bot.send_message(call.message.chat.id,
+                     "Вважаєш себе творчою людиною? 🦄",
                      reply_markup=keyboard)
 
 
@@ -1121,7 +1155,10 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КмаМафія*")
     bot.send_message(call.message.chat.id,
-                     "Залишилось ще трошки! \nВважаєш себе творчою людиною? 🦄",
+                     "Залишилось ще трошки!",
+                     reply_markup=keyboard)
+    bot.send_message(call.message.chat.id,
+                     "Вважаєш себе творчою людиною? 🦄",
                      reply_markup=keyboard)
 
 
@@ -1143,7 +1180,10 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Залишилось ще трошки! \nВважаєш себе творчою людиною? 🦄",
+                     "Залишилось ще трошки!",
+                     reply_markup=keyboard)
+    bot.send_message(call.message.chat.id,
+                     "Вважаєш себе творчою людиною? 🦄",
                      reply_markup=keyboard)
 
 
@@ -1163,6 +1203,7 @@ def statistic(call):
                                            callback_data="art_no")
     )
     bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id-1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
                      "Друзі у захваті від твоїх малюнків? 😍",
@@ -1185,6 +1226,7 @@ def statistic(call):
                                            callback_data="art_no")
     )
     bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id-1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КМА.МАГ")
     bot.send_message(call.message.chat.id,
@@ -1302,7 +1344,10 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Та Могилянка")
     bot.send_message(call.message.chat.id,
-                     "Ти вже майже там! \nТи співаєш краще всіх? 🤩",
+                     "Ти вже майже там!",
+                     reply_markup=keyboard)
+    bot.send_message(call.message.chat.id,
+                     "Ти співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
 
 
@@ -1325,7 +1370,10 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Та Могилянка*")
     bot.send_message(call.message.chat.id,
-                     "Ти вже майже там! \nТи співаєш краще всіх? 🤩",
+                     "Ти вже майже там!",
+                     reply_markup=keyboard)
+    bot.send_message(call.message.chat.id,
+                     "Ти співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
 
 
@@ -1347,7 +1395,10 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Ти вже майже там! \nТи співаєш краще всіх? 🤩",
+                     "Ти вже майже там!",
+                     reply_markup=keyboard)
+    bot.send_message(call.message.chat.id,
+                     "Ти співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
 
 
@@ -1367,6 +1418,7 @@ def statistic(call):
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Хор «Момент»")
     bot.send_message(call.message.chat.id,
@@ -1390,6 +1442,7 @@ def statistic(call):
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Хор «Момент»*")
     bot.send_message(call.message.chat.id,
@@ -1413,6 +1466,7 @@ def statistic(call):
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
                      "А може граєш на музичному  інструменті? 🎸",
@@ -1590,6 +1644,7 @@ def statistic(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == "finish")
 def statistic(call):
+    controller.normalization()
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="back")
@@ -1598,7 +1653,7 @@ def statistic(call):
     for i in controller.get_soinfo_fromuser(call.message.from_user.id):
          bot.send_message(call.message.chat.id, i)
 
-    bot.send_message(call.message.chat.id,"Дякую за увагу!", reply_markup=keyboard)
+    bot.send_message(call.message.chat.id,"You're rock!🤩\n Щоб дізнатися про інші організації переходь у відповідний розділ головного меню!", reply_markup=keyboard)
     get_actual_so(call.message.from_user.id)
 
 
