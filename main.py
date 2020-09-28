@@ -15,7 +15,7 @@ def get_actual_so(user):
     for items in list:
         if "*" not in items[0]:
             string = string + str(items[0].replace("*","")) + ", "
-    string = string[:-1] + ". "
+    string = string[:-2] + ". "
     return string
 
 def get_maybe_so(user):
