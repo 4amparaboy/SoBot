@@ -871,7 +871,7 @@ def statistic(call):
     controller.add_so(call.message.from_user.id, "Та Могилянка")
     controller.add_so(call.message.from_user.id, "Радіо КВІТ")
     bot.send_message(call.message.chat.id,
-                     "Ти вже на пів шляху! \n Тебе можна зустріти на мітингах? ❌",
+                     "Ти вже на пів шляху! \nТебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
 
 
@@ -895,7 +895,7 @@ def statistic(call):
     controller.add_so(call.message.from_user.id, "Та Могилянка*")
     controller.add_so(call.message.from_user.id, "Радіо КВІТ*")
     bot.send_message(call.message.chat.id,
-                     "Ти вже на пів шляху! \n Тебе можна зустріти на мітингах? ❌",
+                     "Ти вже на пів шляху! \nТебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
 
 
@@ -918,7 +918,7 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                      "Ти вже на пів шляху! \n Тебе можна зустріти на мітингах? ❌",
+                      "Ти вже на пів шляху! \nТебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
 
 
@@ -1101,7 +1101,7 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КмаМафія")
     bot.send_message(call.message.chat.id,
-                     "Вважаєш себе творчою людиною? 🦄",
+                     "Залишилось ще трошки! \nВважаєш себе творчою людиною? 🦄",
                      reply_markup=keyboard)
 
 
@@ -1124,7 +1124,7 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КмаМафія*")
     bot.send_message(call.message.chat.id,
-                     "Вважаєш себе творчою людиною? 🦄",
+                     "Залишилось ще трошки! \nВважаєш себе творчою людиною? 🦄",
                      reply_markup=keyboard)
 
 
@@ -1146,7 +1146,7 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Вважаєш себе творчою людиною? 🦄",
+                     "Залишилось ще трошки! \nВважаєш себе творчою людиною? 🦄",
                      reply_markup=keyboard)
 
 
@@ -1305,7 +1305,7 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Та Могилянка")
     bot.send_message(call.message.chat.id,
-                     "Ти співаєш краще всіх? 🤩",
+                     "Ти вже майже там! \nТи співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
 
 
@@ -1328,7 +1328,7 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Та Могилянка*")
     bot.send_message(call.message.chat.id,
-                     "Ти співаєш краще всіх? 🤩",
+                     "Ти вже майже там! \nТи співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
 
 
@@ -1350,7 +1350,7 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
-                     "Ти співаєш краще всіх? 🤩",
+                     "Ти вже майже там! \nТи співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
 
 
