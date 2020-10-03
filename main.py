@@ -430,7 +430,7 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
-    controller.add_so(call.message.from_user.id,'Senapce Space')
+    controller.add_so(call.message.from_user.id,'Synapce Space')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
@@ -453,7 +453,7 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
-    controller.add_so(call.message.from_user.id,'Senapce Space*')
+    controller.add_so(call.message.from_user.id,'Synapce Space*')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
