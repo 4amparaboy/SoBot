@@ -23,7 +23,7 @@ class Controller(object):
         except Exception as error:
             print("Oops! An exception has occured:", error)
             print("Exception TYPE:", type(error))
-            return []
+            return [[]]
 
     def delete_so(self, user):
         self.cursor.execute('DELETE FROM user_so WHERE id =' + str(user))
@@ -37,7 +37,7 @@ class Controller(object):
         except Exception as error:
             print("Oops! An exception has occured:", error)
             print("Exception TYPE:", type(error))
-            return []
+            return [[]]
     def get_soinfo_fromuser(self, user):
         try:
             self.cursor.execute(
@@ -46,7 +46,7 @@ class Controller(object):
         except Exception as error:
             print("Oops! An exception has occured:", error)
             print("Exception TYPE:", type(error))
-            return []
+            return [[]]
     def normalization(self):
         self.cursor.execute('UPDATE user_so SET so = REPLACE(so,\'*\',\'\')', )
         self.conn.commit()
