@@ -1619,7 +1619,7 @@ def statistic(call):
                          "Питаємо у зірок результати…")
     elif state == 1:
         bot.send_message(call.message.chat.id,
-                         "Проводимо стахастичний аналіз відповідей…")
+                         "Проводимо стохастичний аналіз відповідей…")
     elif state == 2:
         bot.send_message(call.message.chat.id,
                          "Дивимося у чарівну кулю передбачення майбутнього…")
