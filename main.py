@@ -1237,7 +1237,7 @@ def statistic(call):
     )
     keyboard.row(
         telebot.types.InlineKeyboardButton("Байдуже, як виглядає 🙄",
-                                           callback_data="art_no")
+                                           callback_data="design_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
@@ -1260,11 +1260,33 @@ def statistic(call):
     )
     keyboard.row(
         telebot.types.InlineKeyboardButton("Байдуже, як виглядає 🙄",
-                                           callback_data="art_no")
+                                           callback_data="design_no")
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КМА.МАГ*")
+    bot.send_message(call.message.chat.id,
+                     "Любиш дизайн і креатив? 🌈 ",
+                     reply_markup=keyboard)
+
+
+@bot.callback_query_handler(func=lambda call: call.data == "art_no")
+def statistic(call):
+    keyboard = telebot.types.InlineKeyboardMarkup()
+    keyboard.row(
+        telebot.types.InlineKeyboardButton("Невід’ємна частина мене 😌",
+                                           callback_data="design_yes")
+    )
+    keyboard.row(
+        telebot.types.InlineKeyboardButton("Вмію хіба що замалювати прищик в фотошопі 😂",
+                                           callback_data="design_yes_maybe")
+    )
+    keyboard.row(
+        telebot.types.InlineKeyboardButton("Байдуже, як виглядає 🙄",
+                                           callback_data="design_no")
+    )
+    bot.answer_callback_query(call.id)
+    bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
                      "Любиш дизайн і креатив? 🌈 ",
                      reply_markup=keyboard)
@@ -1316,7 +1338,7 @@ def statistic(call):
                      reply_markup=keyboard)
 
 
-@bot.callback_query_handler(func=lambda call: call.data == "art_no")
+@bot.callback_query_handler(func=lambda call: call.data == "design_no")
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
