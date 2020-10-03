@@ -872,8 +872,7 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Та Могилянка")
     controller.add_so(call.message.from_user.id, "Радіо КВІТ")
-    bot.send_message(call.message.chat.id,
-                     "Ти вже на пів шляху!")
+
     bot.send_message(call.message.chat.id,
                      "Тебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
@@ -898,8 +897,7 @@ def statistic(call):
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Та Могилянка*")
     controller.add_so(call.message.from_user.id, "Радіо КВІТ*")
-    bot.send_message(call.message.chat.id,
-                     "Ти вже на пів шляху!")
+
     bot.send_message(call.message.chat.id,
                      "Тебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
@@ -923,8 +921,7 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
-    bot.send_message(call.message.chat.id,
-                      "Ти вже на пів шляху!")
+
     bot.send_message(call.message.chat.id,
                      "Тебе можна зустріти на мітингах? ❌",
                      reply_markup=keyboard)
@@ -946,7 +943,7 @@ def statistic(call):
                                            callback_data="eco_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id-1)
+
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "KMAMNESTY")
     bot.send_message(call.message.chat.id,
@@ -970,7 +967,7 @@ def statistic(call):
                                            callback_data="eco_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
+
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "KMAMNESTY*")
     bot.send_message(call.message.chat.id,
@@ -1062,7 +1059,7 @@ def statistic(call):
                                            callback_data="eco_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
+
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
                      "Тебе турбують питання екології? 🌱",
@@ -1158,8 +1155,7 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "КмаМафія*")
-    bot.send_message(call.message.chat.id,
-                     "Залишилось ще трошки!")
+
     bot.send_message(call.message.chat.id,
                      "Вважаєш себе творчою людиною? 🦄",
                      reply_markup=keyboard)
@@ -1182,8 +1178,7 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
-    bot.send_message(call.message.chat.id,
-                     "Залишилось ще трошки!")
+
     bot.send_message(call.message.chat.id,
                      "Вважаєш себе творчою людиною? 🦄",
                      reply_markup=keyboard)
@@ -1205,7 +1200,7 @@ def statistic(call):
                                            callback_data="art_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id-1)
+
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
                      "Друзі у захваті від твоїх малюнків? 😍",
@@ -1220,7 +1215,7 @@ def statistic(call):
                                            callback_data="prefinish")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id-1)
+
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
                      "Натисни, щоб завершити тест і отримати результати?",
@@ -1381,8 +1376,7 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Та Могилянка")
-    bot.send_message(call.message.chat.id,
-                     "Ти вже майже там!")
+
     bot.send_message(call.message.chat.id,
                      "Ти співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
@@ -1406,8 +1400,7 @@ def statistic(call):
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Та Могилянка*")
-    bot.send_message(call.message.chat.id,
-                     "Ти вже майже там!")
+
     bot.send_message(call.message.chat.id,
                      "Ти співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
@@ -1430,8 +1423,7 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id)
-    bot.send_message(call.message.chat.id,
-                     "Ти вже майже там!" )
+
     bot.send_message(call.message.chat.id,
                      "Ти співаєш краще всіх? 🤩",
                      reply_markup=keyboard)
@@ -1453,7 +1445,6 @@ def statistic(call):
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     controller.add_so(call.message.from_user.id, "Хор «Момент»")
     bot.send_message(call.message.chat.id,
@@ -1501,7 +1492,6 @@ def statistic(call):
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id - 1)
     bot.delete_message(call.message.chat.id, call.message.message_id)
     bot.send_message(call.message.chat.id,
                      "А може граєш на музичному  інструменті? 🎸",
