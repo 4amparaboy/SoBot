@@ -1695,7 +1695,7 @@ def get_text_messages(message):
     bot.send_message(message.chat.id,'Скористайся кнопкою /start')
 
 
-if "HEROKU" in list(os.environ.keys()):
+if "HEROKU1" in list(os.environ.keys()):
     logger = telebot.logger
     telebot.logger.setLevel(logging.INFO)
 
