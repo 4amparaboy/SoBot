@@ -1699,7 +1699,7 @@ if "HEROKU" in list(os.environ.keys()):
         bot.remove_webhook()
         bot.set_webhook(url="https://so-bot-telegram.herokuapp.com/"+TOKEN) # этот url нужно заменить на url вашего Хероку приложения
         return "?", 200
-    server.run(host="0.0.0.0", port=os.environ.get('PORT', 80))
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
 else:
     # если переменной окружения HEROKU нету, значит это запуск с машины разработчика.
     # Удаляем вебхук на всякий случай, и запускаем с обычным поллингом.
