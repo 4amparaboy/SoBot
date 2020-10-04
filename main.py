@@ -7,13 +7,39 @@ from random import randint
 from Controller import Controller
 TOKEN = '1311280239:AAFAOTbsernFtNC1OwPs609ovIeHMgiykYA'
 bot = telebot.TeleBot(TOKEN)
+order = """Радіо КВІТ
+Музичний простір «КУТ»
+Squad21
+Гік-клуб
+Хор «Момент»
+КМА.МАГ
+Mohylianka dance
+КмаМафія
+Та Могилянка
+Могила Арт Вик
+Екоклуб «Зелена Хвиля»
+KMAMNESTY
+Могилянська Театральна Спільнота «4 студія»
+ENACTUS NaUKMA
+Асоціація студентів-політологів
+KMA Legal Hackers
+Moot Court Society
+Fido
+East West Business
+Synapce Space
+Студентське біологічне товариство
+Це є ФГН!
+Конференція студентів
+Студентська колегія
+Студентська виборча комісія"""
 
+order_list = order.split("\n")
 
 controller = Controller("d16665sat556v8", "ccggvsufkajsus",
                         "0416de0b350e129e665a0fedf34c68a489aec8cf84ad657007446593d365b7d7",
                         "ec2-46-137-124-19.eu-west-1.compute.amazonaws.com")
-def get_actual_so(user):
-    list = controller.get_so(user)
+def get_actual_so(list1):
+    list = list1
     string = ""
     for items in list:
         if "*" not in items[0]:
@@ -22,8 +48,8 @@ def get_actual_so(user):
         string = string[:-2] + ". "
     return string
 
-def get_maybe_so(user):
-    list = controller.get_so(user)
+def get_maybe_so(list1):
+    list = list1
     string = ""
     for items in list:
         if "*"  in items[0]:
@@ -32,6 +58,11 @@ def get_maybe_so(user):
     if string:
         string = string[:-2] + ". "
     return string
+
+
+def intersection (list1, list2):
+    list3 = [item for item in list1 if item not in list2]
+    return list3
 
 
 @bot.message_handler(commands=['start'])
@@ -60,7 +91,11 @@ def statistic(call):
         telebot.types.InlineKeyboardButton("Про бота", callback_data="botinf"),
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      '👋 Привіт, я допоможу тобі зі студентськими організаціями! Що будемо робити?',
                      reply_markup=keyboard)
@@ -78,7 +113,11 @@ def statistic(call):
     keyboard.row(
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="back")
     )
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      controller.get_soinfo(23)[0][0],
                      reply_markup=keyboard)
@@ -91,7 +130,11 @@ def statistic(call):
         telebot.types.InlineKeyboardButton("Так", callback_data="yes_1"),
         telebot.types.InlineKeyboardButton("Ні", callback_data="back")
     )
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      'Готовий розпочати тест?',
                      reply_markup=keyboard)
@@ -115,7 +158,11 @@ def statistic(call):
     keyboard.row(
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="back")
     )
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      'Вибери категорію',
                      reply_markup=keyboard)
@@ -124,7 +171,11 @@ def statistic(call):
 @bot.callback_query_handler(func=lambda call: call.data == "social")
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     keyboard.row(
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="info")
     )
@@ -135,7 +186,11 @@ def statistic(call):
 @bot.callback_query_handler(func=lambda call: call.data == "prof")
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     keyboard.row(
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="info")
     )
@@ -146,7 +201,11 @@ def statistic(call):
 @bot.callback_query_handler(func=lambda call: call.data == "media")
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     keyboard.row(
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="info")
     )
@@ -157,7 +216,11 @@ def statistic(call):
 @bot.callback_query_handler(func=lambda call: call.data == "myst")
 def statistic(call):
     keyboard = telebot.types.InlineKeyboardMarkup()
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     keyboard.row(
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="info")
     )
@@ -185,7 +248,11 @@ def statistic(call):
                                            callback_data="fsnst")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.delete_so(call.message.from_user.id)
     bot.send_message(call.message.chat.id,
                      "✅ З якого ти факультету?",
@@ -208,7 +275,11 @@ def statistic(call):
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Хочеш практикувати те, що слухаєш на лекціях? 🧐",
                      reply_markup=keyboard)
@@ -230,7 +301,11 @@ def statistic(call):
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Хочеш практикувати те, що слухаєш на лекціях? 🧐",
                      reply_markup=keyboard)
@@ -252,7 +327,11 @@ def statistic(call):
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Хочеш практикувати те, що слухаєш на лекціях? 🧐",
                      reply_markup=keyboard)
@@ -274,7 +353,11 @@ def statistic(call):
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Хочеш практикувати те, що слухаєш на лекціях? 🧐",
                      reply_markup=keyboard)
@@ -296,7 +379,11 @@ def statistic(call):
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Хочеш практикувати те, що слухаєш на лекціях? 🧐",
                      reply_markup=keyboard)
@@ -318,7 +405,11 @@ def statistic(call):
                                            callback_data="pract_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Хочеш практикувати те, що слухаєш на лекціях? 🧐",
                      reply_markup=keyboard)
@@ -340,7 +431,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'Fido')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -363,7 +458,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'Fido*')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -386,7 +485,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'East West Business')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -409,7 +512,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'East West Business*')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -432,7 +539,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'Synapce Space')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -455,7 +566,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'Synapce Space*')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -478,7 +593,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'Moot Court Society')
     controller.add_so(call.message.from_user.id, 'KMA Legal Hackers')
     bot.send_message(call.message.chat.id,
@@ -502,7 +621,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'Moot Court Society*')
     controller.add_so(call.message.from_user.id, 'KMA Legal Hackers*')
     bot.send_message(call.message.chat.id,
@@ -526,7 +649,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'Це є ФГН!')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -549,7 +676,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id,'Це є ФГН!*')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -572,7 +703,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, 'ФСНСТ family')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -595,7 +730,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, 'ФСНСТ family*')
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
@@ -618,7 +757,11 @@ def statistic(call):
                                            callback_data="ideas_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Хочеш реалізувати свої ідеї в КМА? ✨",
                      reply_markup=keyboard)
@@ -640,7 +783,11 @@ def statistic(call):
                                            callback_data="pres_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, 'ENACTUS NaUKMA')
     controller.add_so(call.message.from_user.id, 'Студентська колегія')
     bot.send_message(call.message.chat.id,
@@ -664,7 +811,11 @@ def statistic(call):
                                            callback_data="pres_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, 'ENACTUS NaUKMA*')
     controller.add_so(call.message.from_user.id, 'Студентська колегія*')
     bot.send_message(call.message.chat.id,
@@ -688,7 +839,11 @@ def statistic(call):
                                            callback_data="dance_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, 'Конференція студентів')
     controller.add_so(call.message.from_user.id, 'Студентська виборча комісія')
     bot.send_message(call.message.chat.id,
@@ -712,7 +867,11 @@ def statistic(call):
                                            callback_data="dance_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, 'Конференція студентів*')
     controller.add_so(call.message.from_user.id, 'Студентська виборча комісія*')
     bot.send_message(call.message.chat.id,
@@ -736,7 +895,11 @@ def statistic(call):
                                            callback_data="dance_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Ти запалюєш танцполи на тусах? 🕺🏼",
                      reply_markup=keyboard)
@@ -758,7 +921,11 @@ def statistic(call):
                                            callback_data="dance_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Ти запалюєш танцполи на тусах? 🕺🏼",
                      reply_markup=keyboard)
@@ -780,7 +947,11 @@ def statistic(call):
                                            callback_data="report_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, 'Mohylianka dance')
     bot.send_message(call.message.chat.id,
                      "Ти цікавишся журналістикою? 🎤",
@@ -803,7 +974,11 @@ def statistic(call):
                                            callback_data="report_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, 'Mohylianka dance*')
     bot.send_message(call.message.chat.id,
                      "Ти цікавишся журналістикою? 🎤",
@@ -825,7 +1000,11 @@ def statistic(call):
                                            callback_data="dancelearn_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "А хотів/ла б навчитися? 🥰",
                      reply_markup=keyboard)
@@ -847,7 +1026,11 @@ def statistic(call):
                                            callback_data="report_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                       "Ти цікавишся журналістикою? 🎤 ",
                      reply_markup=keyboard)
@@ -869,7 +1052,11 @@ def statistic(call):
                                            callback_data="meet_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Та Могилянка")
     controller.add_so(call.message.from_user.id, "Радіо КВІТ")
 
@@ -894,7 +1081,11 @@ def statistic(call):
                                            callback_data="meet_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Та Могилянка*")
     controller.add_so(call.message.from_user.id, "Радіо КВІТ*")
 
@@ -920,7 +1111,11 @@ def statistic(call):
                                            callback_data="meet_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
 
     bot.send_message(call.message.chat.id,
                      "Тебе можна зустріти на мітингах? ❌",
@@ -944,7 +1139,11 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
 
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "KMAMNESTY")
     bot.send_message(call.message.chat.id,
                       "Тебе турбують питання екології? 🌱",
@@ -968,7 +1167,11 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
 
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "KMAMNESTY*")
     bot.send_message(call.message.chat.id,
                       "Тебе турбують питання екології? 🌱",
@@ -991,7 +1194,11 @@ def statistic(call):
                                            callback_data="geek_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Екоклуб «Зелена Хвиля»")
     bot.send_message(call.message.chat.id,
                       "Любиш настільні ігри так само, як відсутність пар в суботу? 😍",
@@ -1014,7 +1221,11 @@ def statistic(call):
                                            callback_data="geek_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Екоклуб «Зелена Хвиля»*")
     bot.send_message(call.message.chat.id,
                       "Любиш настільні ігри так само, як відсутність пар в суботу? 😍",
@@ -1037,7 +1248,11 @@ def statistic(call):
                                            callback_data="geek_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                       "Любиш настільні ігри так само, як відсутність пар в суботу? 😍",
                      reply_markup=keyboard)
@@ -1060,7 +1275,11 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
 
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Тебе турбують питання екології? 🌱",
                      reply_markup=keyboard)
@@ -1082,7 +1301,11 @@ def statistic(call):
                                            callback_data="geek_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Гік-клуб")
     bot.send_message(call.message.chat.id,
                      "А в Мафію граєш з друзями? 🧛🏻",
@@ -1105,7 +1328,11 @@ def statistic(call):
                                            callback_data="geek_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Гік-клуб*")
     bot.send_message(call.message.chat.id,
                      "А в Мафію граєш з друзями? 🧛🏻",
@@ -1128,7 +1355,11 @@ def statistic(call):
                                            callback_data="teatr_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "КмаМафія")
     bot.send_message(call.message.chat.id,
                      "Залишилось ще трошки!")
@@ -1153,7 +1384,11 @@ def statistic(call):
                                            callback_data="teatr_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "КмаМафія*")
 
     bot.send_message(call.message.chat.id,
@@ -1177,7 +1412,11 @@ def statistic(call):
                                            callback_data="tvor_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
 
     bot.send_message(call.message.chat.id,
                      "Вважаєш себе творчою людиною? 🦄",
@@ -1201,7 +1440,11 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
 
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Друзі у захваті від твоїх малюнків? 😍",
                      reply_markup=keyboard)
@@ -1216,7 +1459,11 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
 
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Натисни, щоб завершити тест і отримати результати?",
                      reply_markup=keyboard)
@@ -1238,7 +1485,11 @@ def statistic(call):
                                            callback_data="design_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "КМА.МАГ")
     bot.send_message(call.message.chat.id,
                      "Любиш дизайн і креатив? 🌈 ",
@@ -1261,7 +1512,11 @@ def statistic(call):
                                            callback_data="design_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "КМА.МАГ*")
     bot.send_message(call.message.chat.id,
                      "Любиш дизайн і креатив? 🌈 ",
@@ -1284,7 +1539,11 @@ def statistic(call):
                                            callback_data="design_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Любиш дизайн і креатив? 🌈 ",
                      reply_markup=keyboard)
@@ -1306,7 +1565,11 @@ def statistic(call):
                                            callback_data="film_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Squad21")
     bot.send_message(call.message.chat.id,
                      "Знімаєш ролики, займаєшся монтажем або фотографією? 📷 ",
@@ -1329,7 +1592,11 @@ def statistic(call):
                                            callback_data="film_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Squad21*")
     bot.send_message(call.message.chat.id,
                      "Знімаєш ролики, займаєшся монтажем або фотографією? 📷 ",
@@ -1352,7 +1619,11 @@ def statistic(call):
                                            callback_data="film_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Знімаєш ролики, займаєшся монтажем або фотографією? 📷 ",
                      reply_markup=keyboard)
@@ -1374,7 +1645,11 @@ def statistic(call):
                                            callback_data="song_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Та Могилянка")
 
     bot.send_message(call.message.chat.id,
@@ -1398,7 +1673,11 @@ def statistic(call):
                                            callback_data="song_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Та Могилянка*")
 
     bot.send_message(call.message.chat.id,
@@ -1422,7 +1701,11 @@ def statistic(call):
                                            callback_data="song_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
 
     bot.send_message(call.message.chat.id,
                      "Ти співаєш краще всіх? 🤩",
@@ -1445,7 +1728,11 @@ def statistic(call):
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Хор «Момент»")
     bot.send_message(call.message.chat.id,
                      "А може ще й на музичному інструменті граєш? 🎼",
@@ -1469,7 +1756,11 @@ def statistic(call):
     )
     bot.answer_callback_query(call.id)
     bot.delete_message(call.message.chat.id, call.message.message_id - 1)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Хор «Момент»*")
     bot.send_message(call.message.chat.id,
                      "А може ще й на музичному інструменті граєш? 🎼",
@@ -1492,7 +1783,11 @@ def statistic(call):
                                            callback_data="piano_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "А може граєш на музичному  інструменті? 🎸",
                      reply_markup=keyboard)
@@ -1514,7 +1809,11 @@ def statistic(call):
                                            callback_data="teatr_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Музичний простір «КУТ»")
     bot.send_message(call.message.chat.id,
                      "Ти хотів/ла б розвинути своє акторство на сцені? 🎭",
@@ -1537,7 +1836,11 @@ def statistic(call):
                                            callback_data="teatr_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Музичний простір «КУТ»*")
     bot.send_message(call.message.chat.id,
                      "Ти хотів/ла б розвинути своє акторство на сцені? 🎭",
@@ -1561,7 +1864,11 @@ def statistic(call):
                                            callback_data="teatr_no")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Ти хотів/ла б розвинути своє акторство на сцені? 🎭",
                      reply_markup=keyboard)
@@ -1575,7 +1882,11 @@ def statistic(call):
                                            callback_data="prefinish")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Могилянська Театральна Спільнота «4 студія»")
     bot.send_message(call.message.chat.id,
                      "Натисни, щоб завершити тест і отримати результати?",
@@ -1590,7 +1901,11 @@ def statistic(call):
                                            callback_data="prefinish")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     controller.add_so(call.message.from_user.id, "Могилянська Театральна Спільнота «4 студія»*")
     bot.send_message(call.message.chat.id,
                      "Натисни, щоб завершити тест і отримати результати?",
@@ -1605,7 +1920,11 @@ def statistic(call):
                                            callback_data="prefinish")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     bot.send_message(call.message.chat.id,
                      "Натисни, щоб завершити тест і отримати результати?",
                      reply_markup=keyboard)
@@ -1627,7 +1946,11 @@ def statistic(call):
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="back")
     )
     bot.answer_callback_query(call.id)
-    bot.delete_message(call.message.chat.id, call.message.message_id)
+    try:
+         bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
     state = randint(0, 4)
     if state == 0:
         bot.send_message(call.message.chat.id,
@@ -1645,38 +1968,169 @@ def statistic(call):
         bot.send_message(call.message.chat.id,
                          "Налаштовуємо нейронну мережу результатів…")
     time.sleep(1)
-    if controller.get_so(call.message.from_user.id):
-        if get_actual_so(call.message.from_user.id):
-            result = "Пташечка нашептала, що тобі підходять такі СО: " + get_actual_so(call.message.from_user.id)
-            if get_maybe_so(call.message.from_user.id):
-                result = result + "Також можеш спробувати : " + get_maybe_so(call.message.from_user.id)
+    full_list = controller.get_so(call.message.from_user.id)
+    length = len(full_list)
+    if length > 0:
+        actual = stabilizate_top_list(full_list,length)
+        maybe = stabilizate_bottom_list(full_list,length)
+        print("full_list :", full_list)
+        print("actual :", actual)
+        print("maybe :", maybe)
+        try:
+            maybe = to_string(intersection(maybe, actual))
+            actual = to_string(actual)
+        except Exception as error:
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
+
+
+        if actual:
+            result = "Пташечка нашептала, що тобі підходять такі СО: " + actual
+            if maybe:
+                result = result + "Також можеш спробувати : " + maybe
             bot.send_message(call.message.chat.id,
                              result,
                              reply_markup=keyboard)
         else:
-            result = "Пташечка нашептала, що тобі підходять такі СО: " + get_maybe_so(call.message.from_user.id)
+            result = "Пташечка нашептала, що тобі підходять такі СО: " + maybe
             bot.send_message(call.message.chat.id,
                              result,
                              reply_markup=keyboard)
     else:
         bot.send_message(call.message.chat.id,
-                         "Нажаль ми не можемо підібрати для тебе СО 😔 \nАле ти завжди можеш вибрати щось сам зі списку або пройти тест заново",
+                         "На жаль, ми не можемо підібрати для тебе СО 😔 \nАле ти завжди можеш вибрати щось сам зі списку або пройти тест заново",
                          reply_markup=keyboard2)
 
 
+
+def to_string(list):
+
+    result = ""
+    iter = 0
+    for i in list:
+        result = result + i
+        if iter == len(list)-1:
+            result = result + ". "
+        else:
+            result = result + ", "
+        iter += 1
+
+    return result
+
+
+def stabilizate_top(list):
+
+    result = ""
+    iter = 0
+    for i in order_list:
+        for y in list:
+            y[0].replace('*', '')
+            if i == y[0]:
+                result = result + i
+
+                if iter == 2:
+                    result = result + ". "
+                else:
+                    result = result + ", "
+                iter += 1
+                if iter > 2:
+                    return result
+
+
+
+
+def stabilizate_bottom(list):
+
+    result = ""
+    iter = 0
+    for i in range(len(order_list)):
+        for y in list:
+            y[0].replace('*','')
+            if order_list[len(order_list)-i-1] == y[0]:
+                result = result + y[0]
+                if iter == 2:
+                    result = result + ". "
+                else:
+                    result = result + ", "
+                iter += 1
+                if iter > 2:
+                    return result
+
+
+def stabilizate_top_list(list,len):
+
+    result = ["1","Конференція студентів","Студентська колегія"]
+    iter = 0
+    for i in order_list:
+        for y in list:
+            y[0].replace('*', '')
+            if i == y[0]:
+                result[iter] = y[0]
+                iter += 1
+                if iter > 2:
+                    return result
+                if len == iter + 1:
+                    try:
+                        result.remove("1")
+                        result.remove("2")
+                        result.remove("3")
+                    except Exception as error:
+                        print("Oops! An exception has occured:", error)
+                        print("Exception TYPE:", type(error))
+                    return result
+    return result
+
+
+
+def stabilizate_bottom_list(list,length):
+    result = ["1","Конференція студентів","Студентська колегія"]
+    iter = 0
+    for i in range(len(order_list)):
+        for y in list:
+            y[0].replace('*','')
+            if order_list[len(order_list)-i-1] == y[0]:
+                result[iter] = y[0]
+                iter += 1
+                if iter > 2:
+                    return result
+                if length == iter + 1:
+                    try:
+                        result.remove("1")
+                        result.remove("2")
+                        result.remove("3")
+                    except Exception as error:
+                        print("Oops! An exception has occured:", error)
+                        print("Exception TYPE:", type(error))
+                    return result
+    return result
+
 @bot.callback_query_handler(func=lambda call: call.data == "finish")
 def statistic(call):
-    controller.normalization()
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
         telebot.types.InlineKeyboardButton("🔙 Повернутися", callback_data="back")
     )
     bot.answer_callback_query(call.id)
+    full_list = controller.get_so(call.message.from_user.id)
+    length = len(full_list)
+    actual = stabilizate_top_list(full_list,length)
+    maybe = stabilizate_bottom_list(full_list,length)
+    print("full_list :", full_list)
+    print("actual :", actual)
+    print("maybe :", maybe)
+    try:
+        concat = maybe + actual
+    except Exception as error:
+            concat = []
+            print("Oops! An exception has occured:", error)
+            print("Exception TYPE:", type(error))
+    print(concat)
     for i in controller.get_soinfo_fromuser(call.message.from_user.id):
-         bot.send_message(call.message.chat.id, i)
+        if i[0] in concat:
+            bot.send_message(call.message.chat.id, i[1])
 
     bot.send_message(call.message.chat.id,"You're rock!🤩\nЩоб дізнатися про інші організації переходь у відповідний розділ головного меню!", reply_markup=keyboard)
-    get_actual_so(call.message.from_user.id)
+
 
 
 @bot.message_handler(content_types=['text'])
@@ -1684,24 +2138,4 @@ def get_text_messages(message):
     bot.send_message(message.chat.id,'Скористайся кнопкою /start')
 
 
-if "HEROKU" in list(os.environ.keys()):
-    logger = telebot.logger
-    telebot.logger.setLevel(logging.INFO)
-
-    server = Flask(__name__)
-
-    @server.route("/"+TOKEN, methods=['POST'])
-    def getMessage():
-        bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
-        return "!", 200
-    @server.route("/")
-    def webhook():
-        bot.remove_webhook()
-        bot.set_webhook(url="https://so-bot-telegram.herokuapp.com/"+TOKEN) # этот url нужно заменить на url вашего Хероку приложения
-        return "?", 200
-    server.run(host="0.0.0.0", port=os.environ.get('PORT', 80))
-else:
-    # если переменной окружения HEROKU нету, значит это запуск с машины разработчика.
-    # Удаляем вебхук на всякий случай, и запускаем с обычным поллингом.
-    bot.remove_webhook()
-    bot.polling(none_stop=True)
+bot.polling(none_stop=True)
