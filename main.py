@@ -2061,16 +2061,16 @@ def stabilizate_top_list(list,len):
     for i in order_list:
         for y in list:
             y[0].replace('*', '')
-            if i == y[0]:
-                result[iter] = y[0]
+            if i == y[0].replace('*', ''):
+                result[iter] = y[0].replace('*', '')
                 iter += 1
                 if iter > 2:
                     return result
                 if len == iter + 1:
                     try:
                         result.remove("1")
-                        result.remove("2")
-                        result.remove("3")
+                        result.remove("Конференція студентів")
+                        result.remove("Студентська колегія")
                     except Exception as error:
                         print("Oops! An exception has occured:", error)
                         print("Exception TYPE:", type(error))
@@ -2085,16 +2085,16 @@ def stabilizate_bottom_list(list,length):
     for i in range(len(order_list)):
         for y in list:
             y[0].replace('*','')
-            if order_list[len(order_list)-i-1] == y[0]:
-                result[iter] = y[0]
+            if order_list[len(order_list)-i-1] == y[0].replace('*', ''):
+                result[iter] =y[0].replace('*', '')
                 iter += 1
                 if iter > 2:
                     return result
                 if length == iter + 1:
                     try:
                         result.remove("1")
-                        result.remove("2")
-                        result.remove("3")
+                        result.remove("Конференція студентів")
+                        result.remove("Студентська колегія")
                     except Exception as error:
                         print("Oops! An exception has occured:", error)
                         print("Exception TYPE:", type(error))
@@ -2119,6 +2119,9 @@ def statistic(call):
             print("Oops! An exception has occured:", error)
             print("Exception TYPE:", type(error))
     print(concat)
+    controller.normalization()
+    controller.add_so(call.message.from_user.id,'Студентська колегія')
+    controller.add_so(call.message.from_user.id, 'Конференція студентів')
     for i in controller.get_soinfo_fromuser(call.message.from_user.id):
         if i[0] in concat:
             bot.send_message(call.message.chat.id, i[1])
