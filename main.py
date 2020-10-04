@@ -1973,9 +1973,6 @@ def statistic(call):
     if length > 0:
         actual = stabilizate_top_list(full_list,length)
         maybe = stabilizate_bottom_list(full_list,length)
-        print("full_list :", full_list)
-        print("actual :", actual)
-        print("maybe :", maybe)
         try:
             maybe = to_string(intersection(maybe, actual))
             actual = to_string(actual)
@@ -2115,9 +2112,6 @@ def statistic(call):
     length = len(full_list)
     actual = stabilizate_top_list(full_list,length)
     maybe = stabilizate_bottom_list(full_list,length)
-    print("full_list :", full_list)
-    print("actual :", actual)
-    print("maybe :", maybe)
     try:
         concat = maybe + actual
     except Exception as error:
