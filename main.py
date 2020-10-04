@@ -5,8 +5,8 @@ from flask import Flask, request
 import logging
 from random import randint
 from Controller import Controller
-
-bot = telebot.TeleBot('1311280239:AAFAOTbsernFtNC1OwPs609ovIeHMgiykYA')
+TOKEN = '1311280239:AAFAOTbsernFtNC1OwPs609ovIeHMgiykYA'
+bot = telebot.TeleBot(TOKEN)
 
 
 controller = Controller("d16665sat556v8", "ccggvsufkajsus",
@@ -1685,7 +1685,7 @@ def get_text_messages(message):
     bot.send_message(message.chat.id,'Скористайся кнопкою /start')
 
 
-if "HEROKU1" in list(os.environ.keys()):
+if "HEROKU" in list(os.environ.keys()):
     logger = telebot.logger
     telebot.logger.setLevel(logging.INFO)
 
@@ -1697,7 +1697,7 @@ if "HEROKU1" in list(os.environ.keys()):
     @server.route("/")
     def webhook():
         bot.remove_webhook()
-        bot.set_webhook(url="https://so-bot-telegram.herokuapp.com/") # этот url нужно заменить на url вашего Хероку приложения
+        bot.set_webhook(url="https://so-bot-telegram.herokuapp.com/"+TOKEN) # этот url нужно заменить на url вашего Хероку приложения
         return "?", 200
     server.run(host="0.0.0.0", port=os.environ.get('PORT', 80))
 else:
