@@ -16,8 +16,10 @@ Squad21
 Mohylianka dance
 КмаМафія
 Та Могилянка
+Студентська виборча комісія
 Могила Арт Вик
 Екоклуб «Зелена Хвиля»
+Конференція студентів
 KMAMNESTY
 Могилянська Театральна Спільнота «4 студія»
 ENACTUS NaUKMA
@@ -25,13 +27,12 @@ ENACTUS NaUKMA
 KMA Legal Hackers
 Moot Court Society
 Fido
+ФСНСТ family
 East West Business
 Synapce Space
 Студентське біологічне товариство
 Це є ФГН!
-Конференція студентів
-Студентська колегія
-Студентська виборча комісія"""
+Студентська колегія"""
 
 order_list = order.split("\n")
 
