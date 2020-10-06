@@ -3,8 +3,8 @@ import psycopg2
 
 class Controller(object):
 
-    def __init__(self, dbname, user, password, host):
-        self.conn = psycopg2.connect(dbname=dbname, user=user, password=password, host=host)
+    def __init__(self, db_url):
+        self.conn = psycopg2.connect(db_url)
         self.cursor = self.conn.cursor()
 
     def close(self):

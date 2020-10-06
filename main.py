@@ -36,9 +36,7 @@ Synapce Space
 
 order_list = order.split("\n")
 
-controller = Controller("d16665sat556v8", "ccggvsufkajsus",
-                        "0416de0b350e129e665a0fedf34c68a489aec8cf84ad657007446593d365b7d7",
-                        "ec2-46-137-124-19.eu-west-1.compute.amazonaws.com")
+controller = Controller("postgres://mpmithawoffcxa:2ce8046e29865c57647220548eded28a7c709b185efce9935a7948efdd33f9be@ec2-54-155-22-153.eu-west-1.compute.amazonaws.com:5432/dbu4i5li69ulnp")
 def get_actual_so(list1):
     list = list1
     string = ""
